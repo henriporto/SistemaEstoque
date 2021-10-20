@@ -1,0 +1,28 @@
+{% extends "wpensar/base.html" %}
+
+{% block title %}Sistema de estoque 🛒 - Adicionar Produtos{% endblock %}
+
+{% block content %}
+<form action="{% url 'wpensar:processa_formulario' %}" method="POST">{% csrf_token %}
+
+<label>Adicionar novo produto:</label>
+<br>
+<input type="text" placeholder="Digite o nome.." name="name">
+<br>
+<input type="submit" value="Enviar">
+
+</form>
+
+{%if messages%}
+<b class="messages">
+    {% for message in messages %}
+    <spam style="font-size:medium;color: red;"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</spam>
+{% endfor %}
+</b>
+{% endif %}
+
+{% endblock %}
+
+{% block conteudo-1 %} 
+<br><a href="/listar-compras" style="font-size:medium;color: black;">Hist&oacute;rico de compras</a>
+{% endblock%}

@@ -1,0 +1,20 @@
+{% extends "wpensar/base.html" %}
+
+{% block title %}Sistema de estoque 🛒{% endblock %}
+
+{% block content %}
+    <a style="font-size: larger;color: black;">Hist&oacute;rico de compras</a>
+    {% for compra in compra_list %}
+    <article>
+        <h2><a href="{{ compra.get_absolute_url }}"> {{ compra.name }}</a></h2>
+        <p class="date">
+            Publicado em {{ compra.created }} por {{ compra.author }}
+        </p>
+    </article>
+    {% endfor %}
+
+{% endblock %}
+
+{% block conteudo-1 %} 
+<br><a href="/listar-compras" style="font-size:medium;color: black;">Hist&oacute;rico de compras</a>
+{% endblock%}

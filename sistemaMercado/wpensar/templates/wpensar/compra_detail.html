@@ -1,0 +1,19 @@
+{% extends "wpensar/base.html" %}
+
+{% block title %}Sistema de estoque 🛒 - {{ compra.name }}{% endblock %}
+
+{% block content %}
+  <h2>{{ compra.name }}</h2>
+        <p class="date">
+            Publicado em {{ compra.created }} por {{ compra.author }}
+        </p>
+    <spam>Valor total: R$ {{ compra.valorTotal }}.</spam>
+    <br>
+    <spam>Preço médio: R$ {{ compra.precomedio }}.</spam>
+    <br>
+    <spam>{{ compra.quant | safe }}</spam>
+{% endblock %}
+
+{% block conteudo-1 %} 
+<br><a href="/listar-compras" style="font-size:medium;color: black;">Hist&oacute;rico de compras</a>
+{% endblock%}

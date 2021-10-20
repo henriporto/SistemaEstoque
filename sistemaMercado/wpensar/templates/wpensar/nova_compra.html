@@ -1,0 +1,44 @@
+{% extends "wpensar/base.html" %}
+
+{% block title %}Sistema de estoque 🛒 - Nova Compra{% endblock %}
+
+{% block content %}
+<form action="{% url 'wpensar:processa_formulario_compra' %}" method="POST">{% csrf_token %}
+
+<label>Identificador da compra:</label>
+<br>
+<input type="text" placeholder="Digite o identificador.." name="name">
+<br>
+<br>
+<label>Valor total:</label>
+<br>
+<input type="text" placeholder="Digite o valor total da compra.." name="valorTotal">
+
+{% comment %} faço um for que mostra na tela o nome de um produto e do lado 
+uma caixa pro usuario dizer a quantidade desse produto {% endcomment %}
+
+{% for produtos in query_results %}
+<br>
+<br>
+<label>{{ produtos.name }}:</label>
+<br>
+<input type="text" placeholder="Digite a quantidade.." name="produto_{{ forloop.counter }}">
+{% endfor %}
+<br>
+<input type="submit" value="Enviar">
+
+</form>
+
+{%if messages%}
+<b class="messages">
+    {% for message in messages %}
+    <spam style="font-size:medium;color: red;"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</spam>
+{% endfor %}
+</b>
+{% endif %}
+
+{% endblock %}
+
+{% block conteudo-1 %} 
+<br><a href="/listar-compras" style="font-size:medium;color: black;">Hist&oacute;rico de compras</a>
+{% endblock%}

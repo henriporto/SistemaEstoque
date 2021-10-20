@@ -1,0 +1,46 @@
+{% load static %}
+
+{% comment %} Template base de todos os outros {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/wpensar.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div id="geral">
+        <div id="cabecalho" style="border-bottom: 1px solid;">
+            <a href="/"><img style="margin-top: 15px;margin-right: 20px;" src="https://wpensar.com.br//imgs/logo-wpensar.svg" width="240" height="46"
+                alt="WPensar"> </a>
+        </div>
+        <div id="principal">
+            <div id="conteudo-1">
+                <ul>
+                    <a href="/nova_compra" style="font-size:medium;color: black;">Nova compra</a>
+                    <br>
+                    <a href="/adicionar_produtos" style="font-size:medium;color: black;">Adicionar produtos</a>
+                    {% block conteudo-1 %} {% endblock%}
+                </ul>
+            </div>
+            <div id="esquerda">
+                <div id="meio">
+                    {% block content %}
+        {% endblock %}
+                </div>
+            </div>
+        </div>
+        
+        <div id="rodape">
+            <address>Henrique Porto - IC/UFF</address>
+        </div>
+    </div>
+    <div style="position: fixed; right: 0px;top: 93vh;height: 5vh;">
+        <a href="/admin/"><img width="40px" height="40px" src="https://i.ibb.co/g3dKbL5/admicon.png" alt="Login"></a>
+   </div>
+</body>
+
+</html>
+
