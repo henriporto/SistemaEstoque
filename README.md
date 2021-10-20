@@ -11,13 +11,13 @@ Ative o venv
 
     source venv/bin/activate
 
-Inicie o servidor
-
-    python3 manage.py runserver
-
 Vá para a pasta sistemaMercado
 
     cd sistemaMercado
+    
+Inicie o servidor
+
+    python3 manage.py runserver
 
 Abra o endereço `127.0.0.1:8000` em seu navegador.
 
