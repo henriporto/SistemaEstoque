@@ -1,5 +1,5 @@
 # Sistema de Estoque
-> Sistema para estoque básico, feito em Django (Python3) - Ubuntu 20.04.3
+> Sistema para estoque básico, feito em Django (Python3) - SQLite3 - Ubuntu 20.04.3
 
 **Instalação local**
 
